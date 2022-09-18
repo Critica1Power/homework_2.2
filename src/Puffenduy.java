@@ -1,4 +1,7 @@
 public class Puffenduy extends Hogwarts {
+    final String fullName;
+    final int magic;
+    final int teleport;
 
     private int industriousness;
     private int loyalty;
@@ -17,12 +20,7 @@ public class Puffenduy extends Hogwarts {
     }
 
     public Puffenduy(String fullName, int magic, int teleport, int industriousness, int loyalty, int honesty) {
-        if (magic < 0 || magic > 100) {
-            throw new RuntimeException("Неверное значение Магии");
-        }
-        if (teleport < 0 || teleport > 100) {
-            throw new RuntimeException("Неверное значение Трансгрессии");
-        }
+        super(fullName, magic, teleport);
         if (industriousness < 0 || industriousness > 100) {
             throw new RuntimeException("Неверное значение Трудолюбия");
         }
@@ -45,6 +43,9 @@ public class Puffenduy extends Hogwarts {
     }
 
     public void setIndustriousness(int industriousness) {
+        if (industriousness < 0 || industriousness > 100) {
+            throw new RuntimeException("Неверное значение Трудолюбия");
+        }
         this.industriousness = industriousness;
     }
 
@@ -53,6 +54,9 @@ public class Puffenduy extends Hogwarts {
     }
 
     public void setLoyalty(int loyalty) {
+        if (loyalty < 0 || loyalty > 100) {
+            throw new RuntimeException("Неверное значение Верности");
+        }
         this.loyalty = loyalty;
     }
 
@@ -61,6 +65,9 @@ public class Puffenduy extends Hogwarts {
     }
 
     public void setHonesty(int honesty) {
+        if (honesty < 0 || honesty > 100) {
+            throw new RuntimeException("Неверное значение Честности");
+        }
         this.honesty = honesty;
     }
 

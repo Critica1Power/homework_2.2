@@ -1,8 +1,15 @@
 public abstract class Hogwarts {
 
-    String fullName;
-    int magic;
-    int teleport;
+    private String fullName;
+    private int magic;
+    private int teleport;
+
+    public Hogwarts(String fullName, int magic, int teleport) {
+        this.fullName = fullName;
+        this.magic = magic;
+        this.teleport = teleport;
+    }
+
 
     public static void compareStudents(Hogwarts studentFirst, Hogwarts studentSecond) {
         int powerOne = studentFirst.magic + studentFirst.teleport;
@@ -30,7 +37,7 @@ public abstract class Hogwarts {
 
     public void setMagic(int magic) {
         if (magic < 0 || magic > 100) {
-            throw new RuntimeException("Неверное значение");
+            throw new RuntimeException("Неверное значение Магии");
         }
         this.magic = magic;
     }
@@ -41,7 +48,7 @@ public abstract class Hogwarts {
 
     public void setTeleport(int teleport) {
         if (teleport < 0 || teleport > 100) {
-            throw new RuntimeException("Неверное значение");
+            throw new RuntimeException("Неверное значение Трансгрессии");
         }
         this.teleport = teleport;
     }

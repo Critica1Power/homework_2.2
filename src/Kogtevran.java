@@ -1,5 +1,7 @@
 public class Kogtevran extends Hogwarts {
-
+    final String fullName;
+    final int magic;
+    final int teleport;
     private int mind;
     private int wisdom;
     private int wit;
@@ -35,28 +37,35 @@ public class Kogtevran extends Hogwarts {
     }
 
     public void setMind(int mind) {
+        if (mind < 0 || mind > 100) {
+            throw new RuntimeException("Неверное значение Ума");
+        }
         this.mind = mind;
     }
 
     public void setWisdom(int wisdom) {
+        if (wisdom < 0 || wisdom > 100) {
+            throw new RuntimeException("Неверное значение Мудрости");
+        }
         this.wisdom = wisdom;
     }
 
     public void setWit(int wit) {
+        if (wit < 0 || wit > 100) {
+            throw new RuntimeException("Неверное значение Остроумия");
+        }
         this.wit = wit;
     }
 
     public void setCreation(int creation) {
+        if (creation < 0 || creation > 100) {
+            throw new RuntimeException("Неверное значение Творчества");
+        }
         this.creation = creation;
     }
 
     public Kogtevran(String fullName, int magic, int teleport, int mind, int wisdom, int wit, int creation) {
-        if (magic < 0 || magic > 100) {
-            throw new RuntimeException("Неверное значение Магии");
-        }
-        if (teleport < 0 || teleport > 100) {
-            throw new RuntimeException("Неверное значение Трансгрессии");
-        }
+        super(fullName, magic, teleport);
         if (mind < 0 || mind > 100) {
             throw new RuntimeException("Неверное значение Ума");
         }

@@ -1,4 +1,7 @@
 public class Slizerin extends Hogwarts {
+    final String fullName;
+    final int magic;
+    final int teleport;
     private int cunning;
     private int determination;
     private int ambition;
@@ -18,12 +21,7 @@ public class Slizerin extends Hogwarts {
     }
 
     public Slizerin(String fullName, int magic, int teleport, int cunning, int determination, int ambition, int resoursefulness, int lustForPower) {
-        if (magic < 0 || magic > 100) {
-            throw new RuntimeException("Неверное значение Магии");
-        }
-        if (teleport < 0 || teleport > 100) {
-            throw new RuntimeException("Неверное значение Трансгрессии");
-        }
+        super(fullName, magic, teleport);
         if (cunning < 0 || cunning > 100) {
             throw new RuntimeException("Неверное значение Хитрости");
         }
@@ -54,6 +52,9 @@ public class Slizerin extends Hogwarts {
     }
 
     public void setCunning(int cunning) {
+        if (cunning < 0 || cunning > 100) {
+            throw new RuntimeException("Неверное значение Хитрости");
+        }
         this.cunning = cunning;
     }
 
@@ -62,6 +63,9 @@ public class Slizerin extends Hogwarts {
     }
 
     public void setDetermination(int determination) {
+        if (determination < 0 || determination > 100) {
+            throw new RuntimeException("Неверное значение Решительности");
+        }
         this.determination = determination;
     }
 
@@ -70,6 +74,9 @@ public class Slizerin extends Hogwarts {
     }
 
     public void setAmbition(int ambition) {
+        if (ambition < 0 || ambition > 100) {
+            throw new RuntimeException("Неверное значение Амбициозности");
+        }
         this.ambition = ambition;
     }
 
@@ -78,6 +85,9 @@ public class Slizerin extends Hogwarts {
     }
 
     public void setResoursefulness(int resoursefulness) {
+        if (resoursefulness < 0 || resoursefulness > 100) {
+            throw new RuntimeException("Неверное значение Находчивости");
+        }
         this.resoursefulness = resoursefulness;
     }
 
@@ -86,6 +96,9 @@ public class Slizerin extends Hogwarts {
     }
 
     public void setLustForPower(int lustForPower) {
+        if (lustForPower < 0 || lustForPower > 100) {
+            throw new RuntimeException("Неверное значение Жажды власти");
+        }
         this.lustForPower = lustForPower;
     }
 

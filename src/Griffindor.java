@@ -1,4 +1,7 @@
 public class Griffindor extends Hogwarts {
+    final String fullName;
+    final int magic;
+    final int teleport;
     private int honor;
     private int nobility;
     private int bravery;
@@ -7,21 +10,16 @@ public class Griffindor extends Hogwarts {
         int powerOne = this.honor + this.nobility + this.bravery;
         int powerTwo = studentSecond.honor + studentSecond.nobility + studentSecond.bravery;
         if (powerOne > powerTwo) {
-            System.out.println(this.fullName + " лучший Гриффиндорец, чем " + studentSecond.fullName);
+            System.out.println(fullName + " лучший Гриффиндорец, чем " + studentSecond.fullName);
         } else if (powerTwo > powerOne) {
             System.out.println(studentSecond.fullName + " лучший Гриффиндорец, чем " + this.fullName);
         } else {
-            System.out.println(this.fullName + " такой же сильный, как " + studentSecond.fullName);
+            System.out.println(fullName + " такой же сильный, как " + studentSecond.fullName);
         }
     }
 
     public Griffindor(String fullName, int magic, int teleport, int honor, int nobility, int bravery) {
-        if (magic < 0 || magic > 100) {
-            throw new RuntimeException("Неверное значение Магии");
-        }
-        if (teleport < 0 || teleport > 100) {
-            throw new RuntimeException("Неверное значение Трансгрессии");
-        }
+        super(fullName, magic, teleport);
         if (honor < 0 || honor > 100) {
             throw new RuntimeException("Неверное значение Чести");
         }
@@ -51,15 +49,24 @@ public class Griffindor extends Hogwarts {
         return bravery;
     }
 
-    public void setHonour(int honor) {
+    public void setHonor(int honor) {
+        if (honor < 0 || honor > 100) {
+            throw new RuntimeException("Неверное значение Чести");
+        }
         this.honor = honor;
     }
 
     public void setNobility(int nobility) {
+        if (nobility < 0 || nobility > 100) {
+            throw new RuntimeException("Неверное значение Благородства");
+        }
         this.nobility = nobility;
     }
 
     public void setBravery(int bravery) {
+        if (bravery < 0 || bravery > 100) {
+            throw new RuntimeException("Неверное значение Храбрости");
+        }
         this.bravery = bravery;
     }
 
